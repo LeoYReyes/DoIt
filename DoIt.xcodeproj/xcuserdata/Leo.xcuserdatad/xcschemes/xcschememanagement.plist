@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>DoItModels.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>B35380171C863C8500F2AB87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B353806B1C88E9C100F2AB87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B35380741C88E9C200F2AB87</key>
 		<dict>
 			<key>primary</key>
 			<true/>

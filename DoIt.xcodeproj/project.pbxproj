@@ -7,14 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A60E8D2502D9F7F9EEFEA0E /* Pods_DoIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9EE370B8482EBBFACC2CC4 /* Pods_DoIt.framework */; };
 		B3537FFA1C863C8500F2AB87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3537FF91C863C8500F2AB87 /* AppDelegate.swift */; };
-		B3537FFC1C863C8500F2AB87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3537FFB1C863C8500F2AB87 /* ViewController.swift */; };
 		B3537FFF1C863C8500F2AB87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3537FFD1C863C8500F2AB87 /* Main.storyboard */; };
-		B35380021C863C8500F2AB87 /* DoIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B35380001C863C8500F2AB87 /* DoIt.xcdatamodeld */; };
 		B35380041C863C8500F2AB87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B35380031C863C8500F2AB87 /* Assets.xcassets */; };
 		B35380071C863C8500F2AB87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B35380051C863C8500F2AB87 /* LaunchScreen.storyboard */; };
 		B35380121C863C8500F2AB87 /* DoItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35380111C863C8500F2AB87 /* DoItTests.swift */; };
 		B353801D1C863C8500F2AB87 /* DoItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B353801C1C863C8500F2AB87 /* DoItUITests.swift */; };
+		B353802F1C863ED700F2AB87 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = B353802E1C863ED700F2AB87 /* Task.swift */; };
+		B35380311C863EDE00F2AB87 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35380301C863EDE00F2AB87 /* Workout.swift */; };
+		B35380351C86418900F2AB87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35380341C86418900F2AB87 /* HomeViewController.swift */; };
+		B35380371C86439B00F2AB87 /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35380361C86439B00F2AB87 /* AddWorkoutViewController.swift */; };
+		B35380431C889B7100F2AB87 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35380421C889B7100F2AB87 /* WorkoutTableViewCell.swift */; };
+		B35380451C889B9100F2AB87 /* WorkoutTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35380441C889B9100F2AB87 /* WorkoutTableView.swift */; };
+		B35380521C88A66300F2AB87 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = B35380501C88A66300F2AB87 /* close.png */; };
+		B35380531C88A66300F2AB87 /* plus-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = B35380511C88A66300F2AB87 /* plus-circle.png */; };
+		B35380551C88A70900F2AB87 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = B35380541C88A70900F2AB87 /* check.png */; };
+		B35380571C88A8E500F2AB87 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35380561C88A8E500F2AB87 /* WorkoutViewController.swift */; };
+		B35380761C88E9C200F2AB87 /* DoItModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B353806C1C88E9C200F2AB87 /* DoItModels.framework */; };
+		B3639AC31CA0973800C81680 /* WorkoutSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3639AC21CA0973800C81680 /* WorkoutSettingsViewController.swift */; };
+		B3639AC51CA1A81000C81680 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3639AC41CA1A81000C81680 /* HomeView.swift */; };
+		B3639AC91CA1B66D00C81680 /* DoItViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3639AC81CA1B66D00C81680 /* DoItViewExtensions.swift */; };
+		B3949BF31C91DA8E00DD2A09 /* DoItConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3949BF21C91DA8E00DD2A09 /* DoItConstants.swift */; };
+		B3949BF61C91E81B00DD2A09 /* DoItModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3949BF41C91E81B00DD2A09 /* DoItModel.xcdatamodeld */; };
+		B3949BF81C978C7300DD2A09 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3949BF71C978C7300DD2A09 /* AddTaskViewController.swift */; };
+		B3949BFA1C9869EC00DD2A09 /* AddAttributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3949BF91C9869EC00DD2A09 /* AddAttributeViewController.swift */; };
+		B3949BFC1C986CA000DD2A09 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3949BFB1C986CA000DD2A09 /* CheckBox.swift */; };
+		B3F69A9D1C8F37560052EE83 /* DraggableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F69A9C1C8F37560052EE83 /* DraggableViewDelegate.swift */; };
+		B3F69A9F1C8F3A550052EE83 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F69A9E1C8F3A550052EE83 /* DraggableView.swift */; };
+		B3F69AA31C8F3AA00052EE83 /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F69AA21C8F3AA00052EE83 /* TaskCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +53,21 @@
 			remoteGlobalIDString = B3537FF51C863C8500F2AB87;
 			remoteInfo = DoIt;
 		};
+		B35380771C88E9C200F2AB87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3537FEE1C863C8500F2AB87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B353806B1C88E9C100F2AB87;
+			remoteInfo = DoItModels;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B9EE370B8482EBBFACC2CC4 /* Pods_DoIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67019F3C840BAD555BEC261B /* Pods-DoIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoIt/Pods-DoIt.release.xcconfig"; sourceTree = "<group>"; };
 		B3537FF61C863C8500F2AB87 /* DoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3537FF91C863C8500F2AB87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3537FFB1C863C8500F2AB87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3537FFE1C863C8500F2AB87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B35380011C863C8500F2AB87 /* DoIt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DoIt.xcdatamodel; sourceTree = "<group>"; };
 		B35380031C863C8500F2AB87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B35380061C863C8500F2AB87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B35380081C863C8500F2AB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +77,37 @@
 		B35380181C863C8500F2AB87 /* DoItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B353801C1C863C8500F2AB87 /* DoItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoItUITests.swift; sourceTree = "<group>"; };
 		B353801E1C863C8500F2AB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B353802E1C863ED700F2AB87 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		B35380301C863EDE00F2AB87 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		B35380341C86418900F2AB87 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B35380361C86439B00F2AB87 /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
+		B35380421C889B7100F2AB87 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		B35380441C889B9100F2AB87 /* WorkoutTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTableView.swift; sourceTree = "<group>"; };
+		B35380501C88A66300F2AB87 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		B35380511C88A66300F2AB87 /* plus-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-circle.png"; sourceTree = "<group>"; };
+		B35380541C88A70900F2AB87 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		B35380561C88A8E500F2AB87 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		B353806C1C88E9C200F2AB87 /* DoItModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DoItModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B35380751C88E9C200F2AB87 /* DoItModelsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoItModelsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3639AC21CA0973800C81680 /* WorkoutSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSettingsViewController.swift; sourceTree = "<group>"; };
+		B3639AC41CA1A81000C81680 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B3639AC81CA1B66D00C81680 /* DoItViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoItViewExtensions.swift; sourceTree = "<group>"; };
+		B3949BE11C90E62000DD2A09 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B3949BE31C90E62B00DD2A09 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B3949BE51C90E63100DD2A09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B3949BE71C90E63800DD2A09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B3949BE91C90E64000DD2A09 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B3949BEB1C90E64600DD2A09 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B3949BED1C90E64D00DD2A09 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B3949BF21C91DA8E00DD2A09 /* DoItConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoItConstants.swift; sourceTree = "<group>"; };
+		B3949BF51C91E81B00DD2A09 /* DoItModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DoItModel.xcdatamodel; sourceTree = "<group>"; };
+		B3949BF71C978C7300DD2A09 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		B3949BF91C9869EC00DD2A09 /* AddAttributeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAttributeViewController.swift; sourceTree = "<group>"; };
+		B3949BFB1C986CA000DD2A09 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		B3F69A9C1C8F37560052EE83 /* DraggableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewDelegate.swift; sourceTree = "<group>"; };
+		B3F69A9E1C8F3A550052EE83 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		B3F69AA21C8F3AA00052EE83 /* TaskCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+		C5FA2263DE9E88A55AA57E83 /* Pods-DoIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoIt/Pods-DoIt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A60E8D2502D9F7F9EEFEA0E /* Pods_DoIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,9 +133,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B35380681C88E9C100F2AB87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B35380721C88E9C200F2AB87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B35380761C88E9C200F2AB87 /* DoItModels.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB2F19A4701874A20DD7B465 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3949BED1C90E64D00DD2A09 /* SystemConfiguration.framework */,
+				B3949BEB1C90E64600DD2A09 /* Security.framework */,
+				B3949BE91C90E64000DD2A09 /* MobileCoreServices.framework */,
+				B3949BE71C90E63800DD2A09 /* Foundation.framework */,
+				B3949BE51C90E63100DD2A09 /* CoreGraphics.framework */,
+				B3949BE31C90E62B00DD2A09 /* CoreData.framework */,
+				B3949BE11C90E62000DD2A09 /* CFNetwork.framework */,
+				1B9EE370B8482EBBFACC2CC4 /* Pods_DoIt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B3537FED1C863C8500F2AB87 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +173,8 @@
 				B35380101C863C8500F2AB87 /* DoItTests */,
 				B353801B1C863C8500F2AB87 /* DoItUITests */,
 				B3537FF71C863C8500F2AB87 /* Products */,
+				C626B67EC91B7B887F8FE2F2 /* Pods */,
+				AB2F19A4701874A20DD7B465 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +184,8 @@
 				B3537FF61C863C8500F2AB87 /* DoIt.app */,
 				B353800D1C863C8500F2AB87 /* DoItTests.xctest */,
 				B35380181C863C8500F2AB87 /* DoItUITests.xctest */,
+				B353806C1C88E9C200F2AB87 /* DoItModels.framework */,
+				B35380751C88E9C200F2AB87 /* DoItModelsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,13 +193,16 @@
 		B3537FF81C863C8500F2AB87 /* DoIt */ = {
 			isa = PBXGroup;
 			children = (
+				B353804D1C88A5BF00F2AB87 /* Helpers */,
+				B35380461C88A1BB00F2AB87 /* Assets */,
+				B353802C1C863EC200F2AB87 /* Views */,
+				B353802B1C863CC000F2AB87 /* Controllers */,
+				B353802A1C863CB500F2AB87 /* Models */,
 				B3537FF91C863C8500F2AB87 /* AppDelegate.swift */,
-				B3537FFB1C863C8500F2AB87 /* ViewController.swift */,
 				B3537FFD1C863C8500F2AB87 /* Main.storyboard */,
 				B35380031C863C8500F2AB87 /* Assets.xcassets */,
 				B35380051C863C8500F2AB87 /* LaunchScreen.storyboard */,
 				B35380081C863C8500F2AB87 /* Info.plist */,
-				B35380001C863C8500F2AB87 /* DoIt.xcdatamodeld */,
 			);
 			path = DoIt;
 			sourceTree = "<group>";
@@ -128,16 +225,110 @@
 			path = DoItUITests;
 			sourceTree = "<group>";
 		};
+		B353802A1C863CB500F2AB87 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3949BF41C91E81B00DD2A09 /* DoItModel.xcdatamodeld */,
+				B353802E1C863ED700F2AB87 /* Task.swift */,
+				B35380301C863EDE00F2AB87 /* Workout.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B353802B1C863CC000F2AB87 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B35380341C86418900F2AB87 /* HomeViewController.swift */,
+				B35380361C86439B00F2AB87 /* AddWorkoutViewController.swift */,
+				B35380561C88A8E500F2AB87 /* WorkoutViewController.swift */,
+				B3949BF71C978C7300DD2A09 /* AddTaskViewController.swift */,
+				B3949BF91C9869EC00DD2A09 /* AddAttributeViewController.swift */,
+				B3639AC21CA0973800C81680 /* WorkoutSettingsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B353802C1C863EC200F2AB87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B35380421C889B7100F2AB87 /* WorkoutTableViewCell.swift */,
+				B35380441C889B9100F2AB87 /* WorkoutTableView.swift */,
+				B3F69AA21C8F3AA00052EE83 /* TaskCardView.swift */,
+				B3639AC41CA1A81000C81680 /* HomeView.swift */,
+				B3639AC81CA1B66D00C81680 /* DoItViewExtensions.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B35380461C88A1BB00F2AB87 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B35380481C88A1C700F2AB87 /* Icons */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		B35380481C88A1C700F2AB87 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B35380541C88A70900F2AB87 /* check.png */,
+				B35380501C88A66300F2AB87 /* close.png */,
+				B35380511C88A66300F2AB87 /* plus-circle.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		B353804D1C88A5BF00F2AB87 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B3F69A991C8F36B10052EE83 /* Cards */,
+				B3949BFB1C986CA000DD2A09 /* CheckBox.swift */,
+				B3949BF21C91DA8E00DD2A09 /* DoItConstants.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B3F69A991C8F36B10052EE83 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				B3F69A9C1C8F37560052EE83 /* DraggableViewDelegate.swift */,
+				B3F69A9E1C8F3A550052EE83 /* DraggableView.swift */,
+			);
+			name = Cards;
+			sourceTree = "<group>";
+		};
+		C626B67EC91B7B887F8FE2F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5FA2263DE9E88A55AA57E83 /* Pods-DoIt.debug.xcconfig */,
+				67019F3C840BAD555BEC261B /* Pods-DoIt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B35380691C88E9C100F2AB87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B3537FF51C863C8500F2AB87 /* DoIt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B35380211C863C8500F2AB87 /* Build configuration list for PBXNativeTarget "DoIt" */;
 			buildPhases = (
+				BCE4AAFB9D1924D351F95C53 /* Check Pods Manifest.lock */,
 				B3537FF21C863C8500F2AB87 /* Sources */,
 				B3537FF31C863C8500F2AB87 /* Frameworks */,
 				B3537FF41C863C8500F2AB87 /* Resources */,
+				0563A0DD956A5EF9E6AF84D3 /* Embed Pods Frameworks */,
+				717E39C37EC6DB6EF087CEBD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +375,42 @@
 			productReference = B35380181C863C8500F2AB87 /* DoItUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B353806B1C88E9C100F2AB87 /* DoItModels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B353807D1C88E9C200F2AB87 /* Build configuration list for PBXNativeTarget "DoItModels" */;
+			buildPhases = (
+				B35380671C88E9C100F2AB87 /* Sources */,
+				B35380681C88E9C100F2AB87 /* Frameworks */,
+				B35380691C88E9C100F2AB87 /* Headers */,
+				B353806A1C88E9C100F2AB87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoItModels;
+			productName = DoItModels;
+			productReference = B353806C1C88E9C200F2AB87 /* DoItModels.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B35380741C88E9C200F2AB87 /* DoItModelsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B35380801C88E9C200F2AB87 /* Build configuration list for PBXNativeTarget "DoItModelsTests" */;
+			buildPhases = (
+				B35380711C88E9C200F2AB87 /* Sources */,
+				B35380721C88E9C200F2AB87 /* Frameworks */,
+				B35380731C88E9C200F2AB87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B35380781C88E9C200F2AB87 /* PBXTargetDependency */,
+			);
+			name = DoItModelsTests;
+			productName = DoItModelsTests;
+			productReference = B35380751C88E9C200F2AB87 /* DoItModelsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +432,12 @@
 						CreatedOnToolsVersion = 7.1.1;
 						TestTargetID = B3537FF51C863C8500F2AB87;
 					};
+					B353806B1C88E9C100F2AB87 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					B35380741C88E9C200F2AB87 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
 				};
 			};
 			buildConfigurationList = B3537FF11C863C8500F2AB87 /* Build configuration list for PBXProject "DoIt" */;
@@ -223,6 +456,8 @@
 				B3537FF51C863C8500F2AB87 /* DoIt */,
 				B353800C1C863C8500F2AB87 /* DoItTests */,
 				B35380171C863C8500F2AB87 /* DoItUITests */,
+				B353806B1C88E9C100F2AB87 /* DoItModels */,
+				B35380741C88E9C200F2AB87 /* DoItModelsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -232,8 +467,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B35380551C88A70900F2AB87 /* check.png in Resources */,
 				B35380071C863C8500F2AB87 /* LaunchScreen.storyboard in Resources */,
 				B35380041C863C8500F2AB87 /* Assets.xcassets in Resources */,
+				B35380531C88A66300F2AB87 /* plus-circle.png in Resources */,
+				B35380521C88A66300F2AB87 /* close.png in Resources */,
 				B3537FFF1C863C8500F2AB87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,16 +490,94 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B353806A1C88E9C100F2AB87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B35380731C88E9C200F2AB87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0563A0DD956A5EF9E6AF84D3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoIt/Pods-DoIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		717E39C37EC6DB6EF087CEBD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoIt/Pods-DoIt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCE4AAFB9D1924D351F95C53 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B3537FF21C863C8500F2AB87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B35380021C863C8500F2AB87 /* DoIt.xcdatamodeld in Sources */,
-				B3537FFC1C863C8500F2AB87 /* ViewController.swift in Sources */,
+				B353802F1C863ED700F2AB87 /* Task.swift in Sources */,
+				B3639AC91CA1B66D00C81680 /* DoItViewExtensions.swift in Sources */,
+				B3949BFC1C986CA000DD2A09 /* CheckBox.swift in Sources */,
+				B3639AC31CA0973800C81680 /* WorkoutSettingsViewController.swift in Sources */,
+				B35380571C88A8E500F2AB87 /* WorkoutViewController.swift in Sources */,
+				B35380351C86418900F2AB87 /* HomeViewController.swift in Sources */,
+				B35380371C86439B00F2AB87 /* AddWorkoutViewController.swift in Sources */,
+				B35380431C889B7100F2AB87 /* WorkoutTableViewCell.swift in Sources */,
+				B3949BF61C91E81B00DD2A09 /* DoItModel.xcdatamodeld in Sources */,
+				B35380311C863EDE00F2AB87 /* Workout.swift in Sources */,
+				B3949BF81C978C7300DD2A09 /* AddTaskViewController.swift in Sources */,
+				B3949BFA1C9869EC00DD2A09 /* AddAttributeViewController.swift in Sources */,
+				B3F69A9F1C8F3A550052EE83 /* DraggableView.swift in Sources */,
+				B3F69AA31C8F3AA00052EE83 /* TaskCardView.swift in Sources */,
 				B3537FFA1C863C8500F2AB87 /* AppDelegate.swift in Sources */,
+				B35380451C889B9100F2AB87 /* WorkoutTableView.swift in Sources */,
+				B3949BF31C91DA8E00DD2A09 /* DoItConstants.swift in Sources */,
+				B3F69A9D1C8F37560052EE83 /* DraggableViewDelegate.swift in Sources */,
+				B3639AC51CA1A81000C81680 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +597,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B35380671C88E9C100F2AB87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B35380711C88E9C200F2AB87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,6 +623,11 @@
 			isa = PBXTargetDependency;
 			target = B3537FF51C863C8500F2AB87 /* DoIt */;
 			targetProxy = B35380191C863C8500F2AB87 /* PBXContainerItemProxy */;
+		};
+		B35380781C88E9C200F2AB87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B353806B1C88E9C100F2AB87 /* DoItModels */;
+			targetProxy = B35380771C88E9C200F2AB87 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -399,23 +734,27 @@
 		};
 		B35380221C863C8500F2AB87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5FA2263DE9E88A55AA57E83 /* Pods-DoIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DoIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MunkeyCigar.DoIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
 		B35380231C863C8500F2AB87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67019F3C840BAD555BEC261B /* Pods-DoIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DoIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MunkeyCigar.DoIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -467,6 +806,82 @@
 			};
 			name = Release;
 		};
+		B353807E1C88E9C200F2AB87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = DoItModels/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = MunkeyCigar.DoItModels;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B353807F1C88E9C200F2AB87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = DoItModels/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = MunkeyCigar.DoItModels;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B35380811C88E9C200F2AB87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DoItModelsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = MunkeyCigar.DoItModelsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B35380821C88E9C200F2AB87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DoItModelsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = MunkeyCigar.DoItModelsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -486,6 +901,7 @@
 				B35380231C863C8500F2AB87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B35380241C863C8500F2AB87 /* Build configuration list for PBXNativeTarget "DoItTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +910,7 @@
 				B35380261C863C8500F2AB87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B35380271C863C8500F2AB87 /* Build configuration list for PBXNativeTarget "DoItUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,17 +919,36 @@
 				B35380291C863C8500F2AB87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B353807D1C88E9C200F2AB87 /* Build configuration list for PBXNativeTarget "DoItModels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B353807E1C88E9C200F2AB87 /* Debug */,
+				B353807F1C88E9C200F2AB87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B35380801C88E9C200F2AB87 /* Build configuration list for PBXNativeTarget "DoItModelsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B35380811C88E9C200F2AB87 /* Debug */,
+				B35380821C88E9C200F2AB87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B35380001C863C8500F2AB87 /* DoIt.xcdatamodeld */ = {
+		B3949BF41C91E81B00DD2A09 /* DoItModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B35380011C863C8500F2AB87 /* DoIt.xcdatamodel */,
+				B3949BF51C91E81B00DD2A09 /* DoItModel.xcdatamodel */,
 			);
-			currentVersion = B35380011C863C8500F2AB87 /* DoIt.xcdatamodel */;
-			path = DoIt.xcdatamodeld;
+			currentVersion = B3949BF51C91E81B00DD2A09 /* DoItModel.xcdatamodel */;
+			path = DoItModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

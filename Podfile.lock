@@ -1,0 +1,10 @@
+PODS:
+  - JSQCoreDataKit (2.2.0)
+
+DEPENDENCIES:
+  - JSQCoreDataKit
+
+SPEC CHECKSUMS:
+  JSQCoreDataKit: 5fc7bfcd7c1f33d83a1caebbbcd87ee3f4a89261
+
+COCOAPODS: 0.39.0
