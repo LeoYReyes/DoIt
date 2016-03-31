@@ -27,7 +27,7 @@ class AddTaskViewController: UIViewController, AddAttributeDelegate {
     
     var addAttributeButton: UIButton
     
-    var addTaskDelegate: AddTaskDelegate?
+    var manageTaskDelegate: ManageTaskDelegate?
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         self.stackView = UIStackView()
@@ -57,10 +57,10 @@ class AddTaskViewController: UIViewController, AddAttributeDelegate {
         
     }
     
-    convenience init(addTaskDelegate: AddTaskDelegate) {
+    convenience init(manageTaskDelegate: ManageTaskDelegate) {
         self.init(nibName: nil, bundle: nil)
         
-        self.addTaskDelegate = addTaskDelegate
+        self.manageTaskDelegate = manageTaskDelegate
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -228,7 +228,7 @@ class AddTaskViewController: UIViewController, AddAttributeDelegate {
         let duration = (self.durationInput != nil) ? Int32(self.durationInput!.text!) : -1
         let distance = (self.distanceInput != nil) ? Double(self.distanceInput!.text!) : -1
         
-        addTaskDelegate?.addTask(taskName, reps: reps!, sets: sets!, weight: weight!, duration: duration!, distance: distance!)
+        manageTaskDelegate?.addTask(taskName, reps: reps!, sets: sets!, weight: weight!, duration: duration!, distance: distance!)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

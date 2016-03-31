@@ -20,63 +20,68 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     let tintColor = UIColor(red: CGFloat(74.0 / 255.0), green: CGFloat(144.0 / 255.0), blue: CGFloat(226.0 / 255.0), alpha: 1.0)
     
-    var stack: CoreDataStack!
-    
-    @IBOutlet var workoutTableView: UITableView?
+    var servicesContainer: ServicesContainer!
+    var workoutServices: WorkoutServices!
+    var stackView: UIStackView
+    var workoutTableView: UITableView
     
     var workouts: [Workout]
     
-    convenience init() {
-        self.init()
-        self.workoutTableView!.dataSource = self
-        self.workoutTableView!.delegate = self
-        self.workoutTableView!.registerClass(WorkoutTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(WorkoutTableViewCell))
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        self.stackView = UIStackView()
+        self.workouts = [Workout]()
+        self.workoutTableView = UITableView()
         
-        let model = CoreDataModel(name: DoItConstants.ModelName, bundle: NSBundle(identifier: DoItConstants.ModelBundle)!)
-        let factory = CoreDataStackFactory(model: model)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        factory.createStackInBackground { (result: CoreDataStackResult) -> Void in
-            switch result {
-            case .Success(let s):
-                self.stack = s
-                
-            case .Failure(let err):
-                assertionFailure("Failure creating stack: \(err)")
-            }
-        }
+        // Setup stack view traits
+        self.stackView.axis = .Vertical
+        self.stackView.alignment = .Fill
+        self.stackView.distribution = .Fill
+        self.stackView.spacing = 10
+        self.stackView.translatesAutoresizingMaskIntoConstraints = false;
+        
+        self.workoutTableView.registerClass(WorkoutTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(WorkoutTableViewCell))
+        
+        self.stackView.addArrangedSubview(self.workoutTableView)
+        
+        let addWorkoutButton = AddButton(target: self, action: #selector(HomeViewController.addWorkoutSelected(_:)))
+        self.stackView.addArrangedSubview(addWorkoutButton)
+    }
+    
+    convenience init(servicesContainer: ServicesContainer) {
+        self.init(nibName: nil, bundle: nil)
+        self.servicesContainer = servicesContainer
+        self.workoutServices = self.servicesContainer.getWorkoutServices()
+        self.workouts = self.workoutServices.getAllWorkouts()
+        self.workoutTableView.delegate = self
+        self.workoutTableView.dataSource = self
+        self.workoutTableView.backgroundColor = UIColor.clearColor()
+        self.workoutTableView.separatorStyle = .None
     }
 
     required init?(coder aDecoder: NSCoder) {
-        //self.workoutTableView = WorkoutTableView()
+        self.stackView = UIStackView()
         self.workouts = [Workout]()
+        self.workoutTableView = UITableView()
         super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLoad() {
+        self.view.setDefaultBackground()
+        setupNavbar()
         
-        let model = CoreDataModel(name: DoItConstants.ModelName, bundle: NSBundle(identifier: DoItConstants.ModelBundle)!)
-        let factory = CoreDataStackFactory(model: model)
+        self.view.addSubview(self.stackView)
         
-        factory.createStackInBackground { (result: CoreDataStackResult) -> Void in
-            switch result {
-            case .Success(let s):
-                self.stack = s
-                self.workouts = self.fetchWorkouts(self.stack.mainContext)
-                self.workoutTableView!.dataSource = self
-                self.workoutTableView!.delegate = self
-                self.workoutTableView!.registerClass(WorkoutTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(WorkoutTableViewCell))
-                self.workoutTableView?.separatorStyle = .None
-                self.workoutTableView?.backgroundColor = UIColor.clearColor()
-                self.workoutTableView!.reloadData()
-            case .Failure(let err):
-                assertionFailure("Failure creating stack: \(err)")
-            }
-        }
-
+        self.view.addConstraint(NSLayoutConstraint(item: self.stackView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.stackView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: 0.0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.view, attribute: .Trailing, relatedBy: .Equal, toItem: self.stackView, attribute: .Trailing, multiplier: 1.0, constant: 0.0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.view, attribute: .Bottom, relatedBy: .Equal, toItem: self.stackView, attribute: .Bottom, multiplier: 1.0, constant: 15.0))
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.view.setDefaultBackground()
-
-        setupNavbar()
-        self.workoutTableView!.reloadData()
+        self.workoutTableView.reloadData()
     }
     
     func setupNavbar() {
@@ -96,44 +101,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.navigationController!.navigationBar.tintColor = navTintColor
     }
     
-    @IBAction func addWorkoutClicked(sender: UIButton) {
+    func addWorkoutSelected(sender: UIButton) {
         let addWorkoutViewController = AddWorkoutViewController()
         addWorkoutViewController.modalPresentationStyle = .CurrentContext
         addWorkoutViewController.manageWorkoutDelegate = self
         self.presentViewController(addWorkoutViewController, animated: true, completion: nil)
     }
-    
-    //MARK: Helpers
-    
-    func fetchWorkouts(context: NSManagedObjectContext) -> [Workout] {
-        let e = entity(name: Workout.entityName, context: context)
-        let request = FetchRequest<Workout>(entity: e)
-        var fetchedWorkouts = [Workout]()
-        do {
-            fetchedWorkouts = try fetch(request: request, inContext: context)
-        } catch {
-            
-        }
-        return fetchedWorkouts
-    }
 
     //MARK: ManageWorkoutDelegate
     func addWorkout(workoutName: String) {
-        self.stack.mainContext.performBlockAndWait {
-            let newWorkout = Workout(context: self.stack.mainContext, name: workoutName)
-            saveContext(self.stack.mainContext)
-            self.workouts.append(newWorkout)
-        }
-        self.workoutTableView!.reloadData()
+        let newWorkout = workoutServices.addWorkout(workoutName)
+        self.workouts.append(newWorkout)
+        self.workoutTableView.reloadData()
     }
     
     func deleteWorkout(workout: Workout) {
-        self.stack.mainContext.performBlockAndWait {
-            deleteObjects([workout], inContext: self.stack.mainContext)
-            saveContext(self.stack.mainContext)
-        }
+        self.workoutServices.deleteWorkout(workout)
         workouts.removeAtIndex(workouts.indexOf(workout)!)
-        self.workoutTableView!.reloadData()
+        self.workoutTableView.reloadData()
     }
     
     //MARK: UITableViewDataSource
@@ -147,7 +132,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = NSStringFromClass(WorkoutTableViewCell)
-        let cell = self.workoutTableView!.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTableViewCell
+        let cell = self.workoutTableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTableViewCell
         let workout = self.workouts[indexPath.row]
         
         cell.selectionStyle = .None
@@ -158,49 +143,37 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20.0
+    }
+    
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIStackView()
-        headerView.axis = .Horizontal
-        headerView.alignment = .Center
-        headerView.distribution = .Fill
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        let headerTitle = UILabel()
-        headerTitle.text = "My Workouts"
-        let leftSeparatorLine = UIView()
-        leftSeparatorLine.heightAnchor.constraintEqualToConstant(3.0)
-        leftSeparatorLine.backgroundColor = UIColor.blackColor()
-        let rightSeparatorLine = UIView()
-        rightSeparatorLine.backgroundColor = UIColor.blackColor()
-        rightSeparatorLine.heightAnchor.constraintEqualToConstant(3.0)
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 375, height: 75))
+        let leftSeparatorLine = UIView(frame: CGRect(x: 0, y: 17, width: 146, height: 0.4))
+        leftSeparatorLine.backgroundColor = UIColor.grayColor()
+        let rightSeparatorLine = UIView(frame: CGRect(x: 230, y: 17, width: 146, height: 0.4))
+        rightSeparatorLine.backgroundColor = UIColor.grayColor()
+
+        let title: UILabel = UILabel(frame: CGRect(x: 150, y: 0, width: 75, height: 34))
         
-        headerView.addArrangedSubview(leftSeparatorLine)
-        headerView.addArrangedSubview(headerTitle)
-        headerView.addArrangedSubview(rightSeparatorLine)
-//        headerView.addConstraint(NSLayoutConstraint(item: leftSeparatorLine, attribute: .Leading, relatedBy: .Equal, toItem: headerView, attribute: .Leading, multiplier: 1.0, constant: 0.0))
-//        leftSeparatorLine.addConstraint(NSLayoutConstraint(item: headerTitle, attribute: .Leading, relatedBy: .Equal, toItem: leftSeparatorLine, attribute: .Trailing, multiplier: 1.0, constant: 0.0))
-//        rightSeparatorLine.addConstraint(NSLayoutConstraint(item: rightSeparatorLine, attribute: .Leading, relatedBy: .Equal, toItem: headerTitle, attribute: .Trailing, multiplier: 1.0, constant: 0.0))
-//        headerView.addConstraint(NSLayoutConstraint(item: headerView, attribute: .Trailing, relatedBy: .Equal, toItem: rightSeparatorLine, attribute: .Trailing, multiplier: 1.0, constant: 0.0))
-//        var title: UILabel = UILabel()
-//        
-//        title.text = "My Workouts"
-//        title.textAlignment = .Center
-//        title.textColor = UIColor(red: 77.0/255.0, green: 98.0/255.0, blue: 130.0/255.0, alpha: 1.0)
-//        title.backgroundColor = UIColor(red: 225.0/255.0, green: 243.0/255.0, blue: 251.0/255.0, alpha: 1.0)
-//        title.font = UIFont.boldSystemFontOfSize(10)
-//        
-//        var constraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[label]", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: ["label": title])
-//        
-//        title.addConstraints(constraint)
+        title.text = "My Workouts"
+        title.textAlignment = .Center
+        title.textColor = UIColor.whiteColor()
+        title.backgroundColor = UIColor.clearColor()
+        title.font = UIFont.boldSystemFontOfSize(10)
+
+        headerView.addSubview(leftSeparatorLine)
+        headerView.addSubview(title)
+        headerView.addSubview(rightSeparatorLine)
         return headerView
     }
     
     //MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedWorkout = self.workouts[indexPath.row]
-        let workoutViewController = WorkoutViewController(workout: selectedWorkout, stack: self.stack)
+        let workoutViewController = WorkoutViewController(workout: selectedWorkout, servicesContainer: self.servicesContainer)
         workoutViewController.manageWorkoutDelegate = self
         self.navigationController?.pushViewController(workoutViewController, animated: true)
-        
     }
 
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A60E8D2502D9F7F9EEFEA0E /* Pods_DoIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9EE370B8482EBBFACC2CC4 /* Pods_DoIt.framework */; };
 		B3537FFA1C863C8500F2AB87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3537FF91C863C8500F2AB87 /* AppDelegate.swift */; };
-		B3537FFF1C863C8500F2AB87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3537FFD1C863C8500F2AB87 /* Main.storyboard */; };
 		B35380041C863C8500F2AB87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B35380031C863C8500F2AB87 /* Assets.xcassets */; };
 		B35380071C863C8500F2AB87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B35380051C863C8500F2AB87 /* LaunchScreen.storyboard */; };
 		B35380121C863C8500F2AB87 /* DoItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35380111C863C8500F2AB87 /* DoItTests.swift */; };
@@ -25,6 +24,10 @@
 		B35380551C88A70900F2AB87 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = B35380541C88A70900F2AB87 /* check.png */; };
 		B35380571C88A8E500F2AB87 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35380561C88A8E500F2AB87 /* WorkoutViewController.swift */; };
 		B35380761C88E9C200F2AB87 /* DoItModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B353806C1C88E9C200F2AB87 /* DoItModels.framework */; };
+		B35E67841CAB47EF00050BCC /* WorkoutServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E67831CAB47EF00050BCC /* WorkoutServices.swift */; };
+		B35E67861CAC3F0400050BCC /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E67851CAC3F0400050BCC /* AddButton.swift */; };
+		B35E67881CAC45EC00050BCC /* ServicesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E67871CAC45EC00050BCC /* ServicesContainer.swift */; };
+		B35E678A1CAC5AD300050BCC /* TaskServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E67891CAC5AD300050BCC /* TaskServices.swift */; };
 		B3639AC31CA0973800C81680 /* WorkoutSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3639AC21CA0973800C81680 /* WorkoutSettingsViewController.swift */; };
 		B3639AC51CA1A81000C81680 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3639AC41CA1A81000C81680 /* HomeView.swift */; };
 		B3639AC91CA1B66D00C81680 /* DoItViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3639AC81CA1B66D00C81680 /* DoItViewExtensions.swift */; };
@@ -67,7 +70,6 @@
 		67019F3C840BAD555BEC261B /* Pods-DoIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoIt/Pods-DoIt.release.xcconfig"; sourceTree = "<group>"; };
 		B3537FF61C863C8500F2AB87 /* DoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3537FF91C863C8500F2AB87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3537FFE1C863C8500F2AB87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B35380031C863C8500F2AB87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B35380061C863C8500F2AB87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B35380081C863C8500F2AB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +91,10 @@
 		B35380561C88A8E500F2AB87 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		B353806C1C88E9C200F2AB87 /* DoItModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DoItModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B35380751C88E9C200F2AB87 /* DoItModelsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoItModelsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B35E67831CAB47EF00050BCC /* WorkoutServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutServices.swift; sourceTree = "<group>"; };
+		B35E67851CAC3F0400050BCC /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		B35E67871CAC45EC00050BCC /* ServicesContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesContainer.swift; sourceTree = "<group>"; };
+		B35E67891CAC5AD300050BCC /* TaskServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskServices.swift; sourceTree = "<group>"; };
 		B3639AC21CA0973800C81680 /* WorkoutSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSettingsViewController.swift; sourceTree = "<group>"; };
 		B3639AC41CA1A81000C81680 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B3639AC81CA1B66D00C81680 /* DoItViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoItViewExtensions.swift; sourceTree = "<group>"; };
@@ -199,7 +205,6 @@
 				B353802B1C863CC000F2AB87 /* Controllers */,
 				B353802A1C863CB500F2AB87 /* Models */,
 				B3537FF91C863C8500F2AB87 /* AppDelegate.swift */,
-				B3537FFD1C863C8500F2AB87 /* Main.storyboard */,
 				B35380031C863C8500F2AB87 /* Assets.xcassets */,
 				B35380051C863C8500F2AB87 /* LaunchScreen.storyboard */,
 				B35380081C863C8500F2AB87 /* Info.plist */,
@@ -228,6 +233,7 @@
 		B353802A1C863CB500F2AB87 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B35E67821CAB47CA00050BCC /* Services */,
 				B3949BF41C91E81B00DD2A09 /* DoItModel.xcdatamodeld */,
 				B353802E1C863ED700F2AB87 /* Task.swift */,
 				B35380301C863EDE00F2AB87 /* Workout.swift */,
@@ -284,8 +290,19 @@
 				B3F69A991C8F36B10052EE83 /* Cards */,
 				B3949BFB1C986CA000DD2A09 /* CheckBox.swift */,
 				B3949BF21C91DA8E00DD2A09 /* DoItConstants.swift */,
+				B35E67851CAC3F0400050BCC /* AddButton.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B35E67821CAB47CA00050BCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B35E67831CAB47EF00050BCC /* WorkoutServices.swift */,
+				B35E67871CAC45EC00050BCC /* ServicesContainer.swift */,
+				B35E67891CAC5AD300050BCC /* TaskServices.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		B3F69A991C8F36B10052EE83 /* Cards */ = {
@@ -472,7 +489,6 @@
 				B35380041C863C8500F2AB87 /* Assets.xcassets in Resources */,
 				B35380531C88A66300F2AB87 /* plus-circle.png in Resources */,
 				B35380521C88A66300F2AB87 /* close.png in Resources */,
-				B3537FFF1C863C8500F2AB87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +583,7 @@
 				B35380351C86418900F2AB87 /* HomeViewController.swift in Sources */,
 				B35380371C86439B00F2AB87 /* AddWorkoutViewController.swift in Sources */,
 				B35380431C889B7100F2AB87 /* WorkoutTableViewCell.swift in Sources */,
+				B35E678A1CAC5AD300050BCC /* TaskServices.swift in Sources */,
 				B3949BF61C91E81B00DD2A09 /* DoItModel.xcdatamodeld in Sources */,
 				B35380311C863EDE00F2AB87 /* Workout.swift in Sources */,
 				B3949BF81C978C7300DD2A09 /* AddTaskViewController.swift in Sources */,
@@ -574,10 +591,13 @@
 				B3F69A9F1C8F3A550052EE83 /* DraggableView.swift in Sources */,
 				B3F69AA31C8F3AA00052EE83 /* TaskCardView.swift in Sources */,
 				B3537FFA1C863C8500F2AB87 /* AppDelegate.swift in Sources */,
+				B35E67861CAC3F0400050BCC /* AddButton.swift in Sources */,
 				B35380451C889B9100F2AB87 /* WorkoutTableView.swift in Sources */,
+				B35E67881CAC45EC00050BCC /* ServicesContainer.swift in Sources */,
 				B3949BF31C91DA8E00DD2A09 /* DoItConstants.swift in Sources */,
 				B3F69A9D1C8F37560052EE83 /* DraggableViewDelegate.swift in Sources */,
 				B3639AC51CA1A81000C81680 /* HomeView.swift in Sources */,
+				B35E67841CAB47EF00050BCC /* WorkoutServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,14 +652,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B3537FFD1C863C8500F2AB87 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3537FFE1C863C8500F2AB87 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B35380051C863C8500F2AB87 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

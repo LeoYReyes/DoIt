@@ -20,6 +20,7 @@ class WorkoutSettingsViewController: UIViewController, UITableViewDataSource, UI
     var tasks = [Task]()
     
     var manageWorkoutDelegate: ManageWorkoutDelegate?
+    var manageTaskDelegate: ManageTaskDelegate?
     
     var taskTableView: UITableView?
     
@@ -27,9 +28,8 @@ class WorkoutSettingsViewController: UIViewController, UITableViewDataSource, UI
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    convenience init(workout: Workout, stack: CoreDataStack) {
+    convenience init(workout: Workout) {
         self.init(nibName: nil, bundle: nil)
-        self.stack = stack
         self.workout = workout
         self.tasks = (self.workout?.tasks.sort() { (task1, task2) -> Bool in
             return task1.sequence < task2.sequence
@@ -193,9 +193,7 @@ class WorkoutSettingsViewController: UIViewController, UITableViewDataSource, UI
                 
                 swap(&tasks[indexPath!.row], &tasks[Path.initialIndexPath!.row])
                 
-                let tempSequence = tasks[indexPath!.row].sequence
-                tasks[indexPath!.row].sequence = tasks[Path.initialIndexPath!.row].sequence
-                tasks[Path.initialIndexPath!.row].sequence = tempSequence
+                self.manageTaskDelegate?.swapOrderOfTasks(tasks[indexPath!.row], taskB: tasks[Path.initialIndexPath!.row])
                 
                 self.taskTableView!.moveRowAtIndexPath(Path.initialIndexPath!, toIndexPath: indexPath!)
                 
@@ -233,16 +231,6 @@ class WorkoutSettingsViewController: UIViewController, UITableViewDataSource, UI
                         
                     }
             })
-            //TODO: somehow save the reordered tasks
-            saveContext(self.stack.mainContext){ result in
-                switch result {
-                case .Success:
-                    print("save succeeded")
-                    
-                case .Failure(let error):
-                    print("save failed: \(error)")
-                }
-            }
         }
     }
         

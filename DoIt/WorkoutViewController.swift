@@ -13,21 +13,22 @@ import JSQCoreDataKit
 
 let MAX_BUFFER_SIZE: Int = 2
 
-protocol AddTaskDelegate {
+protocol ManageTaskDelegate {
     func addTask(taskName: String, reps: Int16, sets: Int16, weight: Int16, duration: Int32, distance: Double)
+    func swapOrderOfTasks(taskA: Task, taskB: Task)
 }
 
-class WorkoutViewController: UIViewController, AddTaskDelegate, DraggableViewDelegate {
+class WorkoutViewController: UIViewController, ManageTaskDelegate, DraggableViewDelegate {
     
-    var stack: CoreDataStack!
+    var servicesContainer: ServicesContainer!
+    var taskServices: TaskServices!
     
-    var workout: Workout?
+    var workout: Workout!
     
     var stackView: UIStackView
     var cardViewContainer: UIView
     
     var tasks = [Task]()
-    var taskCardViews = [DraggableView]()
     
     var loadedCards = [DraggableView]()
     var allTaskCards = [DraggableView]()
@@ -41,17 +42,18 @@ class WorkoutViewController: UIViewController, AddTaskDelegate, DraggableViewDel
         self.stackView.alignment = .Fill
         self.stackView.distribution = .Fill
         self.stackView.spacing = 10
-        self.stackView.translatesAutoresizingMaskIntoConstraints = false;
+        self.stackView.translatesAutoresizingMaskIntoConstraints = false
         
         self.cardViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: 375, height: 548))
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    convenience init(workout: Workout, stack: CoreDataStack) {
+    convenience init(workout: Workout, servicesContainer: ServicesContainer) {
         self.init(nibName: nil, bundle: nil)
         self.workout = workout
-        self.stack = stack
+        self.servicesContainer = servicesContainer
+        self.taskServices = self.servicesContainer.getTaskServices()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -59,11 +61,11 @@ class WorkoutViewController: UIViewController, AddTaskDelegate, DraggableViewDel
     }
     
     override func viewDidLoad() {
-        tasks = fetchTasks(self.stack.mainContext).sort( { (task1, task2) -> Bool in
+        tasks = self.taskServices.getAllTasksForWorkout(self.workout).sort( { (task1, task2) -> Bool in
             return task1.sequence < task2.sequence
         })
         
-        let addTaskButton = createAddTaskButton()
+        let addTaskButton = AddButton(target: self, action: #selector(WorkoutViewController.addTaskButtonSelected))
         self.stackView.addArrangedSubview(self.cardViewContainer)
         self.stackView.addArrangedSubview(addTaskButton)
         self.view.addSubview(self.stackView)
@@ -78,22 +80,9 @@ class WorkoutViewController: UIViewController, AddTaskDelegate, DraggableViewDel
         self.view.setDefaultBackground()
     }
     
-    func fetchTasks(context: NSManagedObjectContext) -> [Task]{
-        let e = entity(name: Task.entityName, context: context)
-        let request = FetchRequest<Task>(entity: e)
-        request.predicate = NSPredicate(format: "workout == %@", self.workout!)
-        var fetchedTasks = [Task]()
-        do {
-            fetchedTasks = try fetch(request: request, inContext: context)
-        } catch {
-            
-        }
-        return fetchedTasks
-    }
-    
     func setupNavbar() {
         self.navigationItem.title = self.workout!.name
-        let deleteWorkoutButton = UIBarButtonItem(title: "Settings", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("settingsButtonSelected"))
+        let deleteWorkoutButton = UIBarButtonItem(title: "Settings", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WorkoutViewController.settingsButtonSelected))
         self.navigationItem.rightBarButtonItem = deleteWorkoutButton
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
@@ -110,48 +99,36 @@ class WorkoutViewController: UIViewController, AddTaskDelegate, DraggableViewDel
         self.navigationController!.navigationBar.tintColor = navTintColor
     }
     
-    func createAddTaskButton() -> UIButton {
-        let addTaskButton = UIButton(type: .Custom)
-        addTaskButton.setImage(UIImage(named: "add_icon"), forState: .Normal)
-        addTaskButton.addTarget(self, action: Selector("addTaskButtonSelected"), forControlEvents: .TouchDown)
-        return addTaskButton
-    }
-    
     //MARK: Button actions
     
     func addTaskButtonSelected() {
-        let addTaskViewController = AddTaskViewController(addTaskDelegate: self)
+        let addTaskViewController = AddTaskViewController(manageTaskDelegate: self)
         addTaskViewController.modalPresentationStyle = .OverCurrentContext
         self.presentViewController(addTaskViewController, animated: true, completion: nil)
     }
     
     func settingsButtonSelected() {
-        let workoutSettingsViewController = WorkoutSettingsViewController(workout: self.workout!, stack: self.stack)
+        let workoutSettingsViewController = WorkoutSettingsViewController(workout: self.workout!)
         workoutSettingsViewController.manageWorkoutDelegate = self.manageWorkoutDelegate
         self.navigationController?.pushViewController(workoutSettingsViewController, animated: true)
     }
     
-    func fetchWorkout(context: NSManagedObjectContext) -> FetchRequest<Workout> {
-        let e = entity(name: Workout.entityName, context: context)
-        let fetch = FetchRequest<Workout>(entity: e)
-        fetch.predicate = NSPredicate(format: "name == %@", self.workout!.name)
-        return fetch
-    }
-    
-    
-    //MARK: AddTaskDelegate
+    //MARK: ManageTaskDelegate
     
     func addTask(taskName: String, reps: Int16, sets: Int16, weight: Int16, duration: Int32, distance: Double) {
-        stack.mainContext.performBlockAndWait {
-            let newTask = Task(context: self.stack.mainContext, name: taskName, reps: reps, sets: sets, weight: weight, duration: duration, distance: distance, workout: self.workout!)
-            saveContext(self.stack.mainContext)
-            self.tasks.append(newTask)
-            let newTaskCard = self.createDraggableTaskCardAt(self.tasks.count - 1)
-            self.allTaskCards.append(newTaskCard)
-            self.loadNewCard()
-        }
+        let newTask = self.taskServices.addTask(taskName, reps: reps, sets: sets, weight: weight, duration: duration, distance: distance, workout: self.workout!)
+        self.tasks.append(newTask)
+        let newTaskCard = self.createDraggableTaskCardAt(self.tasks.count - 1)
+        self.allTaskCards.append(newTaskCard)
+        self.loadNewCard()
     }
     
+    func swapOrderOfTasks(taskA: Task, taskB: Task) {
+        self.taskServices.swapOrderOfTasks(taskA, taskB: taskB)
+    }
+    
+    
+    //Helpers
     func loadCards() {
         if(tasks.count > 0) {
             let loadedCardsCap =  (tasks.count > MAX_BUFFER_SIZE) ? MAX_BUFFER_SIZE : tasks.count
@@ -197,6 +174,10 @@ class WorkoutViewController: UIViewController, AddTaskDelegate, DraggableViewDel
         draggableTaskCard.delegate = self
         draggableTaskCard.dataIndex = index
         return draggableTaskCard
+    }
+    
+    func reloadView() {
+
     }
     
     //MARK: CardSwipeDelegate

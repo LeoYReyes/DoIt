@@ -62,15 +62,15 @@ class AddAttributeViewController: UIViewController {
         stackView.addArrangedSubview(setsView)
         
         self.weightCheckBox = createCheckBox()
-        let weightView = createAttributeView("weight", checkbox: self.weightCheckBox!)
+        let weightView = createAttributeView("weight   ", checkbox: self.weightCheckBox!)
         stackView.addArrangedSubview(weightView)
         
         self.durationCheckBox = createCheckBox()
-        let durationView = createAttributeView("duration", checkbox: self.durationCheckBox!)
+        let durationView = createAttributeView("duration ", checkbox: self.durationCheckBox!)
         stackView.addArrangedSubview(durationView)
         
         self.distanceCheckBox = createCheckBox()
-        let distanceView = createAttributeView("distance", checkbox: self.distanceCheckBox!)
+        let distanceView = createAttributeView("distance ", checkbox: self.distanceCheckBox!)
         stackView.addArrangedSubview(distanceView)
         
     }

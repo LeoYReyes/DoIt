@@ -32,7 +32,7 @@ class AddWorkoutViewController: UIViewController, UITextFieldDelegate {
         self.init(nibName: nil, bundle: nil)
         
         //TODO: create a view builder
-        workoutNameInput = UITextField(frame: CGRect(x: 75, y: 142, width: 225, height:30))
+        workoutNameInput = UITextField(frame: CGRect(x: 30, y: 100, width: 315, height:34))
         
         workoutNameInput?.placeholder = "New Workout"
         workoutNameInput?.textColor = UIColor.whiteColor()

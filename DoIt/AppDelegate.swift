@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         application.setStatusBarStyle(.LightContent, animated: false)
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let servicesContainer = ServicesContainer()
+        
+        let navController = UINavigationController()
+        self.window?.rootViewController = navController
+        let homeViewController = HomeViewController(servicesContainer: servicesContainer)
+        navController.pushViewController(homeViewController, animated: false)
+        self.window!.makeKeyAndVisible()
         return true
     }
 
